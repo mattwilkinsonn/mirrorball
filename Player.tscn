@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqck7jceh53kp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_saeo1"]
+[ext_resource type="Texture2D" uid="uid://rqfmo6xyk083" path="res://Assets/mirrorball.png" id="2_agps3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_isbm7"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_saeo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_isbm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_agps3")
+
+[node name="Lazer" type="RayCast2D" parent="."]
+target_position = Vector2(0, 1e+07)
+collision_mask = 4
