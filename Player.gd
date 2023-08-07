@@ -98,13 +98,12 @@ func create_mirror_lazer():
 	
 func _draw():
 	if lazer_strength > 0:
-		draw_line(Vector2.ZERO, $Lazer.get_collision_point() - global_position, lazer_godot_color, lazer_strength * 2)
+		draw_line(Vector2.ZERO, to_local($Lazer.get_collision_point()), lazer_godot_color, lazer_strength * 2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	create_mirror_lazer()
 	queue_redraw()
-	print(current_lazers)
 	
 func _physics_process(delta):
 	get_input()
